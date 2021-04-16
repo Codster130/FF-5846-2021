@@ -105,6 +105,7 @@ public class RobotContainer {
                              AutoConstants.kMaxAccelerationMetersPerSecondSquared)
             .setKinematics(DriveConstants.kDriveKinematics)
             .addConstraint(autoVoltageConstraint);
+            
 
     // This trajectory can be modified to suit your purposes
     // Note that all coordinates are in meters, and follow NWU conventions.
@@ -115,7 +116,8 @@ public class RobotContainer {
      Bounce1 Code
     \***********/
     
-    String trajectory1JSON = "paths/Bounce1.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory1JSON = "paths/Bounce1.wpilib.json"; 
+    //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory1JSON);
     bounce1Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -131,11 +133,11 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
-        // takes json file from src/main/deploy/paths in this case cc.wpilib.json and reads the path for the robot to execute
+        // takes json file from src/main/deploy/paths in this case Bounce1.wpilib.json and reads the path for the robot to execute
     m_drivetrain.resetOdometry(bounce1Trajectory.getInitialPose());
 
 
@@ -143,12 +145,13 @@ public class RobotContainer {
      Bounce2 Code
     \***********/
     
-    String trajectory2JSON = "paths/Bounce2.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
-    try {
-  Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory2JSON);
-  bounce2Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
-  } catch (IOException ex) {
-   DriverStation.reportError("Unable to open trajectory: " + trajectory2JSON, ex.getStackTrace());
+    String trajectory2JSON = "paths/Bounce2.wpilib.json"; 
+    //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+      try {
+    Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory2JSON);
+     bounce2Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
+     } catch (IOException ex) {
+      DriverStation.reportError("Unable to open trajectory: " + trajectory2JSON, ex.getStackTrace());
 }
   RamseteCommand Bounce2 = new RamseteCommand(
       bounce2Trajectory,
@@ -159,11 +162,11 @@ public class RobotContainer {
                                  DriveConstants.kaVoltSecondsSquaredPerMeter),
       DriveConstants.kDriveKinematics,
       m_drivetrain::getWheelSpeeds,
-      new PIDController(DriveConstants.kPDriveVel, 0, 0),
-      new PIDController(DriveConstants.kPDriveVel, 0, 0),
+      new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+      new PIDController(DriveConstants.kPDriveVelA, 0, 0),
       m_drivetrain::tankDriveVolts,
       m_drivetrain);
-      // takes json file from src/main/deploy/paths in this case cc.wpilib.json and reads the path for the robot to execute
+      // takes json file from src/main/deploy/paths in this case Bounce2.wpilib.json and reads the path for the robot to execute
   m_drivetrain.resetOdometry(bounce2Trajectory.getInitialPose());
 
 
@@ -172,7 +175,8 @@ public class RobotContainer {
      Bounce3 Code
     \***********/
     
-    String trajectory3JSON = "paths/Bounce3.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory3JSON = "paths/Bounce3.wpilib.json";
+    //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory3JSON);
     bounce3Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -188,11 +192,11 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
-        // takes json file from src/main/deploy/paths in this case cc.wpilib.json and reads the path for the robot to execute
+        // takes json file from src/main/deploy/paths in this case Bounce3.wpilib.json and reads the path for the robot to execute
     m_drivetrain.resetOdometry(bounce3Trajectory.getInitialPose());
 
 
@@ -201,7 +205,8 @@ public class RobotContainer {
      Bounce4 Code
     \***********/
     
-    String trajectory4JSON = "paths/Bounce4.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory4JSON = "paths/Bounce4.wpilib.json"; 
+    //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory4JSON);
     bounce4Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -217,11 +222,11 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
-        new PIDController(DriveConstants.kPDriveVel, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
-        // takes json file from src/main/deploy/paths in this case cc.wpilib.json and reads the path for the robot to execute
+        // takes json file from src/main/deploy/paths in this case Bounce4.wpilib.json and reads the path for the robot to execute
     m_drivetrain.resetOdometry(bounce4Trajectory.getInitialPose());
 
 
@@ -232,7 +237,7 @@ public class RobotContainer {
     // First, we want to reset the drivetrain odometry
     return new InstantCommand(() -> m_drivetrain.resetOdometry(bounce1Trajectory.getInitialPose()), m_drivetrain)
         // next, we run the actual ramsete command
-        .andThen(new InstantCommand(() -> arm.incrementTilt(.0), arm))
+        //.andThen(new InstantCommand(() -> arm.incrementTilt(.0), arm))
         .andThen(Bounce1)
         .andThen(new InstantCommand(() -> m_drivetrain.tankDriveVolts(0, 0), m_drivetrain))
         //.andThen(new InstantCommand(() -> arm.incrementTilt(.5), arm))
@@ -241,7 +246,6 @@ public class RobotContainer {
         .andThen(Bounce3)
         .andThen(new InstantCommand(() -> m_drivetrain.tankDriveVolts(0, 0), m_drivetrain))
         .andThen(Bounce4)
-
         // Finally, we make sure that the robot stops
         .andThen(new InstantCommand(() -> m_drivetrain.tankDriveVolts(0, 0), m_drivetrain));
   } 
@@ -289,6 +293,6 @@ public class RobotContainer {
    */
   public Command getArcadeDriveCommand() {
     return new ArcadeDrive(
-        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(4));
-  }//axis 4 divided by 1.25 for easier circle turning, downside of sloing robot
+        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(4), new PIDController(DriveConstants.kPDriveVelT, 0, 0));
+  }
 }
