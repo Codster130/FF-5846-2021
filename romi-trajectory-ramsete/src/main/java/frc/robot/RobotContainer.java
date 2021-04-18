@@ -133,8 +133,8 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
         // takes json file from src/main/deploy/paths in this case Bounce1.wpilib.json and reads the path for the robot to execute
@@ -162,8 +162,8 @@ public class RobotContainer {
                                  DriveConstants.kaVoltSecondsSquaredPerMeter),
       DriveConstants.kDriveKinematics,
       m_drivetrain::getWheelSpeeds,
-      new PIDController(DriveConstants.kPDriveVelA, 0, 0),
-      new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+      new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
+      new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
       m_drivetrain::tankDriveVolts,
       m_drivetrain);
       // takes json file from src/main/deploy/paths in this case Bounce2.wpilib.json and reads the path for the robot to execute
@@ -192,8 +192,8 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
         // takes json file from src/main/deploy/paths in this case Bounce3.wpilib.json and reads the path for the robot to execute
@@ -222,8 +222,8 @@ public class RobotContainer {
                                    DriveConstants.kaVoltSecondsSquaredPerMeter),
         DriveConstants.kDriveKinematics,
         m_drivetrain::getWheelSpeeds,
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
-        new PIDController(DriveConstants.kPDriveVelA, 0, 0),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
+        new PIDController(AutoConstants.kPDriveVelA, AutoConstants.kIA, AutoConstants.kDA),
         m_drivetrain::tankDriveVolts,
         m_drivetrain);
         // takes json file from src/main/deploy/paths in this case Bounce4.wpilib.json and reads the path for the robot to execute
