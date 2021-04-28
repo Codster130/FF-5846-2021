@@ -5,12 +5,8 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.TimedRobot;
-import edu.wpi.first.wpilibj.controller.ProfiledPIDController;
-import edu.wpi.first.wpilibj.trajectory.TrapezoidProfile;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
-import frc.robot.Constants.DriveConstants;
-
 
 /**
  * The VM is configured to automatically run this class, and to call the functions corresponding to
@@ -86,11 +82,7 @@ public class Robot extends TimedRobot {
 
   /** This function is called periodically during operator control. */
   @Override
-  public void teleopPeriodic() {
-    new ProfiledPIDController(DriveConstants.kPDriveVelT, DriveConstants.kIT, DriveConstants.kIT, new TrapezoidProfile.Constraints(
-        DriveConstants.kMaxAccelerationMetersPerSecondSquared,
-        DriveConstants.kMaxSpeedMetersPerSecond));
-  }
+  public void teleopPeriodic() {}
 
   @Override
   public void testInit() {

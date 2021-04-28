@@ -7,7 +7,6 @@ package frc.robot.commands;
 import frc.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj2.command.CommandBase;
 import java.util.function.Supplier;
-import edu.wpi.first.wpilibj.controller.PIDController;
 
 public class ArcadeDrive extends CommandBase {
   private final Drivetrain m_drivetrain;
@@ -21,19 +20,7 @@ public class ArcadeDrive extends CommandBase {
    * @param drivetrain The drivetrain subsystem on which this command will run
    * @param xaxisSpeedSupplier Lambda supplier of forward/backward speed
    * @param zaxisRotateSuppplier Lambda supplier of rotational speed
-   * @param PIDController To make the robot drive straight, takes from Constants.java
    */
-  public ArcadeDrive(
-      Drivetrain drivetrain,
-      Supplier<Double> xaxisSpeedSupplier,
-      Supplier<Double> zaxisRotateSuppplier,
-      PIDController controller) {
-    m_drivetrain = drivetrain;
-    m_xaxisSpeedSupplier = xaxisSpeedSupplier;
-    m_zaxisRotateSupplier = zaxisRotateSuppplier;
-    addRequirements(drivetrain);
-  }
-
   public ArcadeDrive(
       Drivetrain drivetrain,
       Supplier<Double> xaxisSpeedSupplier,

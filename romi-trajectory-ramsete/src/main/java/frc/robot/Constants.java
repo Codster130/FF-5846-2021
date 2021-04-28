@@ -22,17 +22,23 @@ public final class Constants {
     public static final double kvVoltSecondsPerMeter = 6.33;
     public static final double kaVoltSecondsSquaredPerMeter = 0.0389;
 
-    
-    public static final double kPDriveVelT = 0.085;
-    public static final double kIT = 0;
-    public static final double kDT = 0;
+    public static final double kPDriveVel = 0.085;
 
     public static final double kTrackwidthMeters = 0.142072613;
-    public static final double kMaxSpeedMetersPerSecond = 0.8;
-    public static final double kMaxAccelerationMetersPerSecondSquared = 0.8;
     public static final DifferentialDriveKinematics kDriveKinematics =
         new DifferentialDriveKinematics(kTrackwidthMeters);
   }
+  /*public final class Constants {
+    public static final class DriveConstants {
+      public static final double ksVolts = 0.403;
+      public static final double kvVoltSecondsPerMeter = 9.79;
+      public static final double kaVoltSecondsSquaredPerMeter = 0.201;
+  
+      public static final double kPDriveVel = 0.545;
+      public static final double kTrackwidthMeters = 0.142072613;
+      public static final DifferentialDriveKinematics kDriveKinematics =
+          new DifferentialDriveKinematics(kTrackwidthMeters);
+    }*/
   public static final class AutoConstants {
     public static final double kMaxSpeedMetersPerSecond = 0.8;
     public static final double kMaxAccelerationMetersPerSecondSquared = 0.8;
@@ -40,8 +46,5 @@ public final class Constants {
     // Reasonable baseline values for a RAMSETE follower in units of meters and seconds
     public static final double kRamseteB = 2;
     public static final double kRamseteZeta = 0.7;
-    public static final double kPDriveVelA = 0.085;
-    public static final double kIA = 0;
-    public static final double kDA = 0;
   }
   }
