@@ -115,7 +115,7 @@ public class RobotContainer {
      Bounce1 Code
     \***********/
     
-    String trajectory1JSON = "paths/Bounce1_Final.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory1JSON = "paths/Bounce1.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory1JSON);
     bounce1Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -143,7 +143,7 @@ public class RobotContainer {
      Bounce2 Code
     \***********/
     
-    String trajectory2JSON = "paths/Bounce2_Final.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory2JSON = "paths/Bounce2.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
     try {
   Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory2JSON);
   bounce2Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -172,7 +172,7 @@ public class RobotContainer {
      Bounce3 Code
     \***********/
     
-    String trajectory3JSON = "paths/Bounce3_Final.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory3JSON = "paths/Bounce3.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory3JSON);
     bounce3Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -201,7 +201,7 @@ public class RobotContainer {
      Bounce4 Code
     \***********/
     
-    String trajectory4JSON = "paths/Bounce4_Final.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
+    String trajectory4JSON = "paths/Bounce4.wpilib.json"; //change the ".json" to get a different path to run as long as file is in src/main/deploy/paths
       try {
     Path trajectoryPath = Filesystem.getDeployDirectory().toPath().resolve(trajectory4JSON);
     bounce4Trajectory = TrajectoryUtil.fromPathweaverJson(trajectoryPath);
@@ -291,6 +291,8 @@ public class RobotContainer {
    */
   public Command getArcadeDriveCommand() {
     return new ArcadeDrive(
-        m_drivetrain, () -> -m_controller.getRawAxis(1), () -> m_controller.getRawAxis(4));
-  }//axis 4 divided by 1.25 for easier circle turning, downside of sloing robot
+        m_drivetrain, () -> -Math.pow(m_controller.getRawAxis(1),3)*.8, () -> Math.pow(m_controller.getRawAxis(4),3)*.8);
+
+  }
 }
+//FF_5846_2021

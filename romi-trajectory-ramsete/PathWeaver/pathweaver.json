@@ -2,7 +2,7 @@
   "lengthUnit": "Meter",
   "exportUnit": "Always Meters",
   "maxVelocity": 0.6,
-  "maxAcceleration": 1.9,
+  "maxAcceleration": 2.5,
   "wheelBase": 0.1337,
   "gameName": "CC",
   "outputDir": ""
